@@ -12,19 +12,34 @@ class CookScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color.fromRGBO(44, 47, 56, 1.0),
+        appBar: AppBar(
+          title: Text(
+            "Calorie dei piatti",
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 24,
+                ),
+          ),
+          centerTitle: true,
+          automaticallyImplyLeading: false,
+          elevation: 0,
+          backgroundColor: const Color.fromRGBO(44, 47, 56, 1.0),
+        ),
         body: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "Calorie dei piatti",
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.white),
-              ),
+              // Text(
+              //   "Calorie dei piatti",
+              //   textAlign: TextAlign.center,
+              //   style: Theme.of(context).textTheme.titleLarge!.copyWith(
+              //       fontSize: 24,
+              //       fontWeight: FontWeight.w400,
+              //       color: Colors.white),
+              // ),
               const SizedBox(height: 22),
               const CustomTextField(),
               const SizedBox(height: 20),

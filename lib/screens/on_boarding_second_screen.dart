@@ -179,7 +179,8 @@ class OnBoardingSecondScreen extends StatelessWidget {
                             ),
                           ),
                         ],
-                      )
+                      ),
+                      const SizedBox(height: 30)
                     ],
                   ),
                 ),
@@ -187,8 +188,8 @@ class OnBoardingSecondScreen extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 110,
-            left: 160,
+            top: MediaQuery.of(context).size.height *0.18,
+            left: MediaQuery.of(context).size.width*0.4,
             child: Center(
               child: Image.asset(
                 AppImages.avatar,

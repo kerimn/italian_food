@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:food/constants/colors.dart';
 import 'package:food/constants/images.dart';
-import 'package:food/screens/about_screen.dart';
 import 'package:food/screens/cook_screen.dart';
 import 'package:food/screens/home_screen.dart';
 import 'package:food/screens/settings_screen.dart';
@@ -30,51 +29,54 @@ class _MyAppScreenState extends State<MyAppScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color.fromRGBO(44, 47, 56, 1.0),
-      body: pages[currentIndex],
-      bottomNavigationBar: Container(
-        padding: const EdgeInsets.all(16.0),
-        child: ClipRRect(
-          borderRadius: const BorderRadius.all(
-            Radius.circular(20),
-          ),
-          child: BottomNavigationBar(
-            backgroundColor: const Color.fromRGBO(163, 169, 186, 1.0),
-            currentIndex: currentIndex,
-            onTap: _onItemTapped,
-            items: [
-              BottomNavigationBarItem(
-                icon: Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: SvgPicture.asset(
-                    AppImages.cutlery,
-                    color: currentIndex == 0 ? mainColor : Colors.white,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: const Color.fromRGBO(44, 47, 56, 1.0),
+        body: pages[currentIndex],
+        bottomNavigationBar: Container(
+          padding: const EdgeInsets.all(16.0),
+          child: ClipRRect(
+            borderRadius: const BorderRadius.all(
+              Radius.circular(20),
+            ),
+            child: BottomNavigationBar(
+              backgroundColor: const Color.fromRGBO(37, 40, 48, .8),
+              currentIndex: currentIndex,
+              elevation: 0,
+              onTap: _onItemTapped,
+              items: [
+                BottomNavigationBarItem(
+                  icon: Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: SvgPicture.asset(
+                      AppImages.cutlery,
+                      color: currentIndex == 0 ? mainColor : Colors.white,
+                    ),
                   ),
+                  label: '',
                 ),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: SvgPicture.asset(
-                    AppImages.fire,
-                    color: currentIndex == 1 ? mainColor : Colors.white,
+                BottomNavigationBarItem(
+                  icon: Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: SvgPicture.asset(
+                      AppImages.fire,
+                      color: currentIndex == 1 ? mainColor : Colors.white,
+                    ),
                   ),
+                  label: '',
                 ),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: SvgPicture.asset(AppImages.setting,
-                      color: currentIndex == 2 ? mainColor : Colors.white),
+                BottomNavigationBarItem(
+                  icon: Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: SvgPicture.asset(AppImages.setting,
+                        color: currentIndex == 2 ? mainColor : Colors.white),
+                  ),
+                  label: '',
                 ),
-                label: '',
-              ),
-            ],
-            selectedItemColor: mainColor,
-            unselectedItemColor: Colors.white,
+              ],
+              selectedItemColor: mainColor,
+              unselectedItemColor: Colors.white,
+            ),
           ),
         ),
       ),
