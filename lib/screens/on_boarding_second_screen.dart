@@ -188,8 +188,8 @@ class OnBoardingSecondScreen extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: MediaQuery.of(context).size.height *0.18,
-            left: MediaQuery.of(context).size.width*0.4,
+            top: MediaQuery.of(context).size.height * 0.10,
+            left: MediaQuery.of(context).size.width * 0.42,
             child: Center(
               child: Image.asset(
                 AppImages.avatar,

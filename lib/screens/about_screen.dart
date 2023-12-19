@@ -3,12 +3,17 @@ import 'package:flutter_svg/svg.dart';
 import 'package:food/constants/images.dart';
 
 class AboutScreen extends StatelessWidget {
-  const AboutScreen({super.key});
-
+  const AboutScreen(
+      {super.key,
+      required this.productTitle,
+      required this.productImg,
+      required this.productDescription});
+  final productImg;
+  final productTitle;
+  final productDescription;
   @override
   Widget build(BuildContext context) {
-    String moreText =
-        "Lasagne (italiano: lasagne) lasagne) - pasta, un sottile foglio di pasta a forma di quadrato o rettangolo, nonché un piatto della cucina italiana, tradizionalmente preparato da sottili fogli di pasta (in realtà chiamati lasagne) con strati di vari ripieni. In italiano, il piatto, a differenza della pasta utilizzata per esso, può essere chiamato lasagna al forno (italiano: lasagna al forno). lasagne al forno). Il ripieno più tradizionale per le lasagne è il ripieno a base di stufato con carne macinata, cosparso di besciamella e cosparso di parmigiano. Tuttavia, nelle versioni regionali, il ripieno può essere, in particolare, da pomodori, spinaci, altre verdure, salsa bolognese, mozzarella o ricotta, infatti, il set di ripieni è illimitato.";
+    String moreText = productDescription;
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -47,7 +52,7 @@ class AboutScreen extends StatelessWidget {
         children: [
           Positioned.fill(
             child: Image.asset(
-              AppImages.onBoardingPhoto,
+              productImg,
               fit: BoxFit.cover,
             ),
           ),
@@ -75,13 +80,13 @@ class AboutScreen extends StatelessWidget {
                 // ),
               ),
               child: SizedBox(
-                height: MediaQuery.of(context).size.height * 0.6,
+                height: MediaQuery.of(context).size.height * 0.4,
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        "Lasagne",
+                        productTitle,
                         style: Theme.of(context).textTheme.titleLarge!.copyWith(
                             fontSize: 24, fontWeight: FontWeight.w400),
                       ),

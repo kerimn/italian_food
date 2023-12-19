@@ -263,7 +263,7 @@ List<Product> products = [
   Product(
     id: 24,
     name: "Linguine alle Vongole",
-    img: "assets/img/feeds/linguine.jpg.jpg",
+    img: "assets/img/feeds/linguine.jpg",
     description: "Linguine pasta with fresh clams, garlic, and white wine.",
     kcal: "350",
     weight: "280g",
